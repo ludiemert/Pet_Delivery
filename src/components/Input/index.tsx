@@ -1,0 +1,30 @@
+import { RegularText } from "../Typography";
+import {
+  InputStyleContainer,
+  InputWrapper,
+  InputStyled,
+  RightText,
+} from "./styles";
+import { forwardRef, InputHTMLAttributes } from "react";
+
+//tipagem para Type Script
+//autocompleta com as informacoes que vier dos inputs
+
+type InputProps = InputHTMLAttributes<HTMLInputElement> & {
+  error?: string;
+  rightText?: string;
+};
+
+export const Input = forwardRef<HTMLInputElement, InputProps>(
+  ({ error, className, rightText, ...props }, ref) => {
+    return (
+      <InputWrapper className={className}>
+        <InputStyleContainer hasError={!!error}>
+          <InputStyled {...props} ref={ref} />
+          {rightText && <RightText>{rightText}</RightText>}
+        </InputStyleContainer>
+        {error && <RegularText size="s">{error}</RegularText>}
+      </InputWrapper>
+    );
+  }
+);
