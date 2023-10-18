@@ -6,6 +6,11 @@
 
 <h3 align="center">A Pet delivery website developed with React + Typescript, Rocketseat learnings.</h3>
 
+
+## 🔖 Project on air
+You can visualize the project on air [link]( https://deliverypetshop.netlify.app/)
+
+
 ---
 
 <h3>Demonstration 🎥</h3>
